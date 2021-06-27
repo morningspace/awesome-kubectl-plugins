@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Working Effectively with Kubernetes by Extending Your kubectl</title>
+
+    <link rel="shortcut icon" type="image/png" href="https://kubernetes.io/images/favicon.png">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+              <img src="images/Kubernetes.png" style="border: 0; background-color: #111111" />
+              <h3>Working Effectively with Kubernetes</h3>
+              <h3>by Extending Your kubectl</h3>
+              <p><a href="https://morningspace.github.io/">MorningSpace</a></p>
+            </section>
+            <section>
+              <section data-markdown>
+                ## kubectl and Its Plugins
+                * kubectl is the essential utility to interact with Kubernetes cluster.
+                * kubectl plugins extend kubectl with new commands, allowing for new and custom features not included in the main distribution of kubectl.
+                * A plugin is a standalone executable file, whose name begins with `kubectl-`.
+              </section>
+              <section data-markdown>
+                ## Steps to Write a kubectl Plugin
+                1. Write plugin in any programming language or script.
+                2. Make the plugin executable, e.g.: using `chmod`.
+                3. Place it anywhere in your PATH to install the plugin.
+
+                https://kubernetes.io/docs/tasks/extend-kubectl/kubectl-plugins/
+              </section>
+              <section data-markdown>
+                ## Distribute Your kubectl Plugin
+                * [Krew](https://krew.dev/), as a plugin manager maintained by the Kubernetes SIG CLI community, offers a cross-platform way to package and distribute your plugins.
+                * Krew maintains a [plugin index](https://krew.sigs.k8s.io/plugins/) so that other people can discover your plugin and install it.
+
+
+                ```
+                $ kubectl krew install &lt;your_plugin&gt;
+                $ kubectl &lt;your_plugin&gt; --help
+                ```
+              </section>
+            </section>
+            <section data-markdown>
+                ## Reference Cases
+| Plugin | Description
+|:-- |:--
+|[KubeAssert](https://github.com/morningspace/kubeassert) | Assert Kubernetes resources from command line.
+|[KubeMacro](https://github.com/morningspace/kubemacro)   | Wrap a set of kubectl or Kubernetes API calls as a macro, a single unit of work, to run from command line.
+            </section>
+            <section>
+              <section data-markdown>
+                ## KubeAssert
+                * [Supported assertions with demos](../demo/kubeassert.md)
+                * [Writing custom assertion](https://morningspace.github.io/kubeassert/docs/#/writing-custom-assertion)
+                * [Working with KUTTL](https://morningspace.github.io/kubeassert/docs/#/working-with-kuttl)
+              </section>
+              <section>
+                <h2>Learn More</h2>
+                <ul>
+                  <li><a href="https://medium.com/tag/kubeassert">https://medium.com/tag/kubeassert</a></li>
+                  <li><a href="https://morningspace.github.io/kubeassert">https://morningspace.github.io/kubeassert</a></li>
+                  <li><a href="https://github.com/morningspace/kubeassert">https://github.com/morningspace/kubeassert</a></li>
+                  <a class="github-button" href="https://github.com/morningspace/kubeassert/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch morningspace/kubeassert on GitHub">Watch</a>
+                  <a class="github-button" href="https://github.com/morningspace/kubeassert" data-icon="octicon-star" data-size="large" aria-label="Star morningspace/kubeassert on GitHub">Star</a>
+                  <a class="github-button" href="https://github.com/morningspace/kubeassert/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork morningspace/kubeassert on GitHub">Fork</a>
+                </ul>
+                <p>
+                </p>
+                <img src="https://morningspace.github.io/kubeassert/docs/assets/kubeassert.png" style="border: 0; background-color: #111111" />
+              </section>
+            </section>
+            <section>
+              <section data-markdown>
+                ## KubeMacro
+                * [Install KubeMacro plugin](https://morningspace.github.io/kubemacro/docs/#/getting-started?id=install-kubemacro)
+                * [Install macro](https://morningspace.github.io/kubemacro/docs/#/getting-started?id=install-a-macro) by visiting [Kubemacro Hub](https://morningspace.github.io/kubemacro-hub)
+                * [Some macro demos](../demo/kubemacro.md)
+                * [Writing custom kube macro](https://morningspace.github.io/kubemacro/docs/#/writing-a-macro)
+              </section>
+              <section>
+                <h2>Learn More</h2>
+                <ul>
+                  <li><a href="https://medium.com/tag/kubemacro">https://medium.com/tag/kubemacro</a></li>
+                  <li><a href="https://morningspace.github.io/kubemacro">https://morningspace.github.io/kubemacro</a></li>
+                  <li><a href="https://morningspace.github.io/kubemacro-hub">https://morningspace.github.io/kubemacro-hub</a></li>
+                  <li><a href="https://github.com/morningspace/kubemacro">https://github.com/morningspace/kubemacro</a></li>
+                  <a class="github-button" href="https://github.com/morningspace/kubemacro/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch morningspace/kubemacro on GitHub">Watch</a>
+                  <a class="github-button" href="https://github.com/morningspace/kubemacro" data-icon="octicon-star" data-size="large" aria-label="Star morningspace/kubemacro on GitHub">Star</a>
+                  <a class="github-button" href="https://github.com/morningspace/kubemacro/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork morningspace/kubemacro on GitHub">Fork</a>
+                  <li><a href="https://github.com/morningspace/kubemacro-hub">https://github.com/morningspace/kubemacro-hub</a></li>
+                  <a class="github-button" href="https://github.com/morningspace/kubemacro/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch morningspace/kubemacro on GitHub">Watch</a>
+                  <a class="github-button" href="https://github.com/morningspace/kubemacro" data-icon="octicon-star" data-size="large" aria-label="Star morningspace/kubemacro on GitHub">Star</a>
+                  <a class="github-button" href="https://github.com/morningspace/kubemacro/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork morningspace/kubemacro on GitHub">Fork</a>
+                  <li><a href="https://github.com/morningspace/kubemacro-hub/issues">https://github.com/morningspace/kubemacro-hub/issues</a></li>
+                  <li><a href="https://github.com/morningspace/kubemacro/issues">https://github.com/morningspace/kubemacro/issues</a></li>
+                </ul>
+                <p>
+                </p>
+              </section>
+            </section>
+            <section>
+              <h2>Find Me</h2>
+              <ul style='text-align:left'>
+                <li><a href="https://github.com/morningspace">https://github.com/morningspace</a>
+                <li><a href="http://morningspace.medium.com">http://morningspace.medium.com</a>
+                <li><a href="https://www.youtube.com/channel/UCRFLHaVUn7bNvWLK8nFAVJA">https://www.youtube.com/channel/UCRFLHaVUn7bNvWLK8nFAVJA</a>
+              <ul>
+            </section>
+            <section>
+              <h2>Thanks !</h2>
+            </section>
+        </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            history: true,
+            transition: 'convex',
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [{
+                src: 'plugin/markdown/marked.js'
+            }, {
+                src: 'plugin/markdown/markdown.js'
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'plugin/zoom-js/zoom.js',
+                async: true
+            }]
+        });
+    </script>
+</body>
+
+</html>
