@@ -1,2 +1,3 @@
 # kubectl-plugins
-Presentation on extending kubectl with plugins to work with Kubernetes efficiently
+
+[Working Effectively with Kubernetes by Extending Your kubectl](https://morningspace.github.io/kubectl-plugins/slides/extend-kubectl.html)
