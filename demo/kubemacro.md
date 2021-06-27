@@ -1,4 +1,4 @@
-# Demo: KubeAssert
+# Demo: KubeMacro
 
 This demo will show you some interesting macros that are available on KubeMacro Hub.
 
