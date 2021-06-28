@@ -11,10 +11,10 @@ A curated list of awesome kubectl plugins materials
 
 * [Extend kubectl with plugins](https://kubernetes.io/docs/tasks/extend-kubectl/kubectl-plugins/)
 * [Krew](https://krew.sigs.k8s.io/): The plugin manager for kubectl command-line tool.
-* [Working Effectively with Kubernetes by Extending Your kubectl](https://morningspace.github.io/kubectl-plugins/slides/extend-kubectl.html)
+* [Working Effectively with Kubernetes by Extending Your kubectl](https://morningspace.github.io/awesome-kubectl-plugins/slides/extend-kubectl.html)
 * [KubeAssert on Medium](https://medium.com/tag/kubeassert)
 * [KubeMacro on Medium](https://medium.com/tag/kubemacro)
-* [KubeMacro Hub](https://github.com/morningspace/kubemacro)
+* [KubeMacro Hub](https://morningspace.github.io/kubemacro-hub)
 
 ## Plugins
 
