@@ -2,7 +2,7 @@
 
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
-A curated list of awesome kubectl plugins materials
+A curated list of awesome kubectl plugins materials. If you'd like to add new materials or see a link that doesn't work, welcome to submit a pull request to help improve it.
 
 * [Resources](#resources)
 * [Plugins](#plugins)
